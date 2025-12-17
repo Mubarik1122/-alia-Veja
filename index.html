@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Žalia Veja — Kraštovaizdžio dizainas ir priežiūra</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-brown: #8b5a3c;
+            --accent-terracotta: #c97d60;
+            --warm-sand: #e8b298;
+            --light-beige: #f5e6d3;
+            --cream: #faf6f1;
+            --warm-white: #ffffff;
+            --charcoal: #3d3d3d;
+            --gold-accent: #d4af37;
+            --soft-shadow: rgba(139, 90, 60, 0.15);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--charcoal);
+            background: var(--cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header Styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--warm-white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-brown);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--accent-terracotta);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-terracotta);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-terracotta);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-cta {
+            background: var(--accent-terracotta);
+            color: var(--warm-white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(201, 125, 96, 0.3);
+        }
+
+        .header-cta:hover {
+            background: var(--primary-brown);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 90, 60, 0.4);
+        }
+
+        .header-cta::after {
+            display: none;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-toggle svg {
+            width: 28px;
+            height: 28px;
+            stroke: var(--primary-brown);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(139, 90, 60, 0.7) 0%, rgba(201, 125, 96, 0.6) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: var(--warm-white);
+            padding: 2rem;
+            max-width: 900px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            font-weight: 200;
+            letter-spacing: -3px;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-slogan {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.3rem 3rem;
+            background: var(--warm-white);
+            color: var(--primary-brown);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: var(--light-beige);
+            transition: width 0.6s, height 0.6s, top 0.6s, left 0.6s;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            border: 2px solid var(--warm-white);
+            color: var(--warm-white);
+        }
+
+        .cta-button-secondary::before {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            z-index: 10;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            stroke: var(--warm-white);
+            fill: none;
+            stroke-width: 2;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: var(--warm-white);
+            width: 30px;
+            border-radius: 6px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--primary-brown);
+            color: var(--warm-white);
+            padding: 4rem 2rem;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .stat-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 200;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-brown);
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--accent-terracotta);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: var(--warm-white);
+            padding: 3rem 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px var(--soft-shadow);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-terracotta), var(--warm-sand));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px var(--soft-shadow);
+            border-color: var(--warm-sand);
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--accent-terracotta), var(--warm-sand));
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 8px 20px rgba(201, 125, 96, 0.3);
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        .service-icon svg {
+            width: 45px;
+            height: 45px;
+            stroke: var(--warm-white);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .service-card h3 {
+            font-size: 1.9rem;
+            margin-bottom: 1rem;
+            color: var(--primary-brown);
+            font-weight: 500;
+        }
+
+        .service-card p {
+            color: var(--charcoal);
+            line-height: 1.8;
+            opacity: 0.85;
+            font-size: 1.05rem;
+        }
+
+        /* About Section */
+        .about-section {
+            background: linear-gradient(135deg, var(--light-beige) 0%, var(--cream) 100%);
+            padding: 8rem 2rem;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 200;
+            margin-bottom: 2rem;
+            color: var(--primary-brown);
+        }
+
+        .about-text p {
+            font-size: 1.15rem;
+            line-height: 2;
+            margin-bottom: 1.5rem;
+            color: var(--charcoal);
+            opacity: 0.9;
+        }
+
+        .values-list {
+            display: grid;
+            gap: 1.8rem;
+            margin-top: 3rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.5s ease;
+            background: var(--warm-white);
+            padding: 1.2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(139, 90, 60, 0.08);
+        }
+
+        .value-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .value-item:hover {
+            box-shadow: 0 8px 30px rgba(139, 90, 60, 0.15);
+            transform: translateX(5px);
+        }
+
+        .value-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--accent-terracotta), var(--warm-sand));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .value-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--warm-white);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .value-text {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        .about-image {
+            position: relative;
+            height: 550px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px var(--soft-shadow);
+            background: linear-gradient(135deg, var(--accent-terracotta), var(--warm-sand));
+        }
+
+        /* Gallery Section */
+        .gallery-container {
+            position: relative;
+            margin-top: 4rem;
+        }
+
+        .gallery-slider {
+            position: relative;
+            height: 650px;
+            overflow: hidden;
+            border-radius: 35px;
+            box-shadow: 0 25px 90px var(--soft-shadow);
+        }
+
+        .gallery-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+        }
+
+        .gallery-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            background: linear-gradient(135deg, var(--accent-terracotta), var(--warm-sand));
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3.5rem;
+            background: linear-gradient(to top, rgba(139, 90, 60, 0.95), transparent);
+            color: var(--warm-white);
+        }
+
+        .gallery-overlay h3 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+        }
+
+        .gallery-overlay p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2rem;
+            transform: translateY(-50%);
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .gallery-arrow {
+            width: 65px;
+            height: 65px;
+            background: rgba(255, 255, 255, 0.95);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            pointer-events: all;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-arrow:hover {
+            background: var(--warm-white);
+            transform: scale(1.15);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-arrow svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--primary-brown);
+            fill: none;
+            stroke-width: 2.5;
+        }
+
+        .gallery-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        .gallery-indicator {
+            width: 90px;
+            height: 6px;
+            background: rgba(139, 90, 60, 0.2);
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-indicator.active {
+            background: var(--accent-terracotta);
+            width: 130px;
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary-brown), var(--accent-terracotta));
+            padding: 6rem 2rem;
+            text-align: center;
+            color: var(--warm-white);
+        }
+
+        .cta-banner h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-banner p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-banner .cta-button {
+            background: var(--warm-white);
+            color: var(--primary-brown);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--cream);
+            padding: 8rem 2rem;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+
+        .contact-info h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 200;
+            margin-bottom: 2rem;
+            color: var(--primary-brown);
+        }
+
+        .contact-info p {
+            font-size: 1.15rem;
+            color: var(--charcoal);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        .contact-details {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--warm-white);
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(139, 90, 60, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            box-shadow: 0 10px 35px rgba(139, 90, 60, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .contact-item-icon {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--accent-terracotta), var(--warm-sand));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item-icon svg {
+            width: 26px;
+            height: 26px;
+            stroke: var(--warm-white);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .contact-item-text h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--primary-brown);
+        }
+
+        .contact-item-text p {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .map-container {
+            height: 500px;
+            background: linear-gradient(135deg, var(--accent-terracotta), var(--warm-sand));
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px var(--soft-shadow);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: var(--warm-white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .footer-about p {
+            opacity: 0.8;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background: var(--accent-terracotta);
+            transform: translateY(-3px);
+        }
+
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--warm-white);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--warm-white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent-terracotta);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem 1.5rem;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                background: var(--warm-white);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 6rem 2rem 2rem;
+                gap: 2rem;
+                transition: left 0.3s ease;
+                box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav a {
+                font-size: 1.3rem;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                margin-top: 70px;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .gallery-slider {
+                height: 450px;
+            }
+
+            .gallery-arrow {
+                width: 50px;
+                height: 50px;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                Žalia Veja
+            </a>
+            <nav>
+                <a href="#services">Paslaugos</a>
+                <a href="#about">Apie mus</a>
+                <a href="#gallery">Darbai</a>
+                <a href="#contact">Kontaktai</a>
+                <a href="#contact" class="header-cta">Konsultacija</a>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <svg viewBox="0 0 24 24">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1920 1080%22%3E%3Cdefs%3E%3ClinearGradient id=%22g1%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%23c97d60%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%23e8b298%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23g1)%22 width=%221920%22 height=%221080%22/%3E%3Cpath d=%22M0,540 Q480,400 960,540 T1920,540 L1920,1080 L0,1080 Z%22 fill=%22%238b5a3c%22 opacity=%220.3%22/%3E%3C/svg%3E');"></div>
+            <div class="hero-slide" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1920 1080%22%3E%3Cdefs%3E%3ClinearGradient id=%22g2%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%23e8b298%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%23f5e6d3%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23g2)%22 width=%221920%22 height=%221080%22/%3E%3Ccircle cx=%22400%22 cy=%22300%22 r=%22200%22 fill=%22%23c97d60%22 opacity=%220.2%22/%3E%3Ccircle cx=%221500%22 cy=%22700%22 r=%22250%22 fill=%22%238b5a3c%22 opacity=%220.15%22/%3E%3C/svg%3E');"></div>
+            <div class="hero-slide" style="background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1920 1080%22%3E%3Cdefs%3E%3ClinearGradient id=%22g3%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%25%22 y2=%22100%25%22%3E%3Cstop offset=%220%25%22 style=%22stop-color:%238b5a3c%22/%3E%3Cstop offset=%22100%25%22 style=%22stop-color:%23c97d60%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=%22url(%23g3)%22 width=%221920%22 height=%221080%22/%3E%3Cpath d=%22M0,0 L1920,0 L1920,540 Q1440,680 960,540 T0,540 Z%22 fill=%22%23e8b298%22 opacity=%220.25%22/%3E%3C/svg%3E');"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Žalia Veja</h1>
+            <p class="hero-slogan">Harmonija tarp gamtos ir dizaino</p>
+            <div class="hero-cta-group">
+                <a href="#contact" class="cta-button">Pradėkite projektą</a>
+                <a href="#services" class="cta-button cta-button-secondary">Sužinokite daugiau</a>
+            </div>
+        </div>
+        <div class="slider-dots">
+            <div class="slider-dot active"></div>
+            <div class="slider-dot"></div>
+            <div class="slider-dot"></div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Metų patirtis</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Įgyvendintų projektų</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Klientų pasitenkinimas</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Profesionalų komanda</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Mūsų paslaugos</h2>
+        <p class="section-subtitle">Profesionalūs sprendimai jūsų erdvei</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+                <h3>Kraštovaizdžio dizainas</h3>
+                <p>Kuriame unikalius ir funkcionalius kraštovaizdžio sprendimus, atspindinčius jūsų viziją ir harmoningai integruotus į aplinką.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 6v6l4 2"></path>
+                    </svg>
+                </div>
+                <h3>Sodo priežiūra</h3>
+                <p>Reguliari profesionali priežiūra, užtikrinanti, kad jūsų sodas būtų sveikas, gražus ir tvarkingos išvaizdos visus metus.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    </svg>
+                </div>
+                <h3>Teritorijos valymas</h3>
+                <p>Ekologiški valymo sprendimai jūsų namų ir verslo erdvėms, užtikrinant švarą ir šviežumą kiekvieną dieną.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h3>Konsultacijos</h3>
+                <p>Profesionalios konsultacijos augalų parinkimo, sodo planavimo ir priežiūros klausimais, pritaikytos jūsų poreikiams.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                    </svg>
+                </div>
+                <h3>Sodinimas</h3>
+                <p>Profesionalus augalų, medžių ir krūmų sodinimas su ilgalaikės sėkmės garantija ir priežiūros rekomendacijomis.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                        <line x1="16" y1="8" x2="2" y2="22"></line>
+                        <line x1="17.5" y1="15" x2="9" y2="15"></line>
+                    </svg>
+                </div>
+                <h3>Sezoniniai darbai</h3>
+                <p>Sezoninės paslaugos — nuo pavasario paruošimo iki rudens valymų ir žiemos apsaugos darbų.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <div class="about-section" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Mūsų istorija</h2>
+                <p>Žalia Veja — tai daugiau nei įmonė. Tai meilės gamtai ir profesionalumo sintezė, kurianti unikalias erdves ir rūpinasi jų išsaugojimu.</p>
+                <p>Jau daugiau nei dešimtmetį kuriame žaliuosius oazius Lietuvoje, derindami tradicines žinias su šiuolaikinėmis technologijomis ir ekologišku požiūriu.</p>
+                
+                <div class="values-list">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div class="value-text">Ekologiški sprendimai ir tvarumas</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div class="value-text">Profesionalumas ir dėmesys detalėms</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div class="value-text">Individualus požiūris į kiekvieną projektą</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                        </div>
+                        <div class="value-text">Ilgalaikis partnerystės siekis</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-image"></div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2 class="section-title">Mūsų darbai</h2>
+        <p class="section-subtitle">Įkvėpimo galerija iš mūsų projektų</p>
+        
+        <div class="gallery-container">
+            <div class="gallery-slider">
+                <div class="gallery-track">
+                    <div class="gallery-slide">
+                        <div class="gallery-overlay">
+                            <h3>Privataus namo sodas</h3>
+                            <p>Modernus kraštovaizdžio dizainas su natūraliais elementais</p>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <div class="gallery-overlay">
+                            <h3>Verslo centro aplinka</h3>
+                            <p>Profesionali komercinių erdvių priežiūra</p>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <div class="gallery-overlay">
+                            <h3>Daugiabučio kiemelis</h3>
+                            <p>Funkcionalus ir estetiškas bendrų erdvių sprendimas</p>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <div class="gallery-overlay">
+                            <h3>Parko rekonstrukcija</h3>
+                            <p>Viešų erdvių atnaujinimas ir tvarkymas</p>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <div class="gallery-overlay">
+                            <h3>Stogo terasa</h3>
+                            <p>Unikalūs sprendimai stogo terasoms</p>
+                        </div>
+                    </div>
+                    <div class="gallery-slide">
+                        <div class="gallery-overlay">
+                            <h3>Žiemos sodas</h3>
+                            <p>Žaluma visus metus su tinkamai parinktais augalais</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-nav">
+                <button class="gallery-arrow gallery-prev" aria-label="Ankstesnis">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <button class="gallery-arrow gallery-next" aria-label="Kitas">
+                    <svg viewBox="0 0 24 24">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="gallery-indicators">
+                <div class="gallery-indicator active"></div>
+                <div class="gallery-indicator"></div>
+                <div class="gallery-indicator"></div>
+                <div class="gallery-indicator"></div>
+                <div class="gallery-indicator"></div>
+                <div class="gallery-indicator"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner">
+        <h2>Pasiruošę pradėti savo projektą?</h2>
+        <p>Susisiekite su mumis šiandien ir gaukite nemokamą konsultaciją bei projektą pritaikytą jūsų poreikiams</p>
+        <a href="#contact" class="cta-button">Planuoti susitikimą</a>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <div class="contact-info">
+                <h2>Susisiekite</h2>
+                <p>Pasiruošę įgyvendinti jūsų idėjas ir sukurti jūsų svajonių erdvę. Susisiekite su mumis šiandien!</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <h3>Adresas</h3>
+                            <p>Žalioji g. 15, Vilnius</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <h3>Telefonas</h3>
+                            <p>+370 600 12345</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <h3>El. paštas</h3>
+                            <p>info@zaliaveja.lt</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-about">
+                <h3>Žalia Veja</h3>
+                <p>Profesionalūs kraštovaizdžio dizaino ir priežiūros sprendimai. Kuriame žaliąsias erdves, kurios įkvepia ir džiugina visus metus.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Paslaugos</h4>
+                <ul>
+                    <li><a href="#services">Kraštovaizdžio dizainas</a></li>
+                    <li><a href="#services">Sodo priežiūra</a></li>
+                    <li><a href="#services">Teritorijos valymas</a></li>
+                    <li><a href="#services">Konsultacijos</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Kompanija</h4>
+                <ul>
+                    <li><a href="#about">Apie mus</a></li>
+                    <li><a href="#gallery">Projektai</a></li>
+                    <li><a href="#">Karjera</a></li>
+                    <li><a href="#contact">Kontaktai</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Informacija</h4>
+                <ul>
+                    <li><a href="#">Privatumo politika</a></li>
+                    <li><a href="#">Naudojimo sąlygos</a></li>
+                    <li><a href="#">DUK</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Žalia Veja. Visos teisės saugomos.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const nav = document.querySelector('nav');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+
+        // Header scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Hero slider
+        let currentHeroSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const sliderDots = document.querySelectorAll('.slider-dot');
+
+        function showHeroSlide(index) {
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            sliderDots.forEach(dot => dot.classList.remove('active'));
+            heroSlides[index].classList.add('active');
+            sliderDots[index].classList.add('active');
+        }
+
+        setInterval(() => {
+            currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+            showHeroSlide(currentHeroSlide);
+        }, 5000);
+
+        sliderDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentHeroSlide = index;
+                showHeroSlide(currentHeroSlide);
+            });
+        });
+
+        // Gallery slider
+        let currentGallerySlide = 0;
+        const galleryTrack = document.querySelector('.gallery-track');
+        const gallerySlides = document.querySelectorAll('.gallery-slide');
+        const galleryIndicators = document.querySelectorAll('.gallery-indicator');
+
+        function updateGallerySlider() {
+            const slideWidth = gallerySlides[0].offsetWidth;
+            galleryTrack.style.transform = `translateX(-${currentGallerySlide * slideWidth}px)`;
+            galleryIndicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentGallerySlide);
+            });
+        }
+
+        document.querySelector('.gallery-prev').addEventListener('click', () => {
+            currentGallerySlide = (currentGallerySlide - 1 + gallerySlides.length) % gallerySlides.length;
+            updateGallerySlider();
+        });
+
+        document.querySelector('.gallery-next').addEventListener('click', () => {
+            currentGallerySlide = (currentGallerySlide + 1) % gallerySlides.length;
+            updateGallerySlider();
+        });
+
+        galleryIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentGallerySlide = index;
+                updateGallerySlider();
+            });
+        });
+
+        setInterval(() => {
+            currentGallerySlide = (currentGallerySlide + 1) % gallerySlides.length;
+            updateGallerySlider();
+        }, 4000);
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.service-card, .value-item, .stat-item').forEach((el, i) => {
+            el.style.transitionDelay = `${i * 0.1}s`;
+            observer.observe(el);
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        window.addEventListener('resize', updateGallerySlider);
+    </script>
+</body>
+</html>
