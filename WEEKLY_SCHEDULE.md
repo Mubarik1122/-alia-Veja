@@ -1,28 +1,30 @@
-# Weekly Chaos Series — Scheduled Uploads
+# Weekly Chaos Series — All 6 Episodes Scheduled
 
-3 edited gameplay episodes uploaded and scheduled (1 per week).
+All 6 edited parts are uploaded with titles, descriptions, hashtags, and tags.
+Schedule: **1 video every 6 days**, starting tomorrow.
 
 | # | Title | Publishes (UTC) | Link |
 |---|-------|-----------------|------|
-| 1 | Giant Pothole Chaos! Cars Fall Into Massive Craters \| Episode 1 | **2026-08-12 18:00** (tomorrow) | https://www.youtube.com/watch?v=0pYpdWePwL0 |
+| 1 | Giant Pothole Chaos! Cars Fall Into Massive Craters \| Episode 1 | **2026-08-12 18:00** | https://www.youtube.com/watch?v=0pYpdWePwL0 |
 | 2 | Audi RS6 vs The Impossible Crater Road \| Episode 2 | **2026-08-18 18:00** | https://www.youtube.com/watch?v=Enqan8UEMvg |
 | 3 | Highway Semi-Truck FIRE Crash Chaos \| Episode 3 | **2026-08-24 18:00** | https://www.youtube.com/watch?v=DWznPwHU77Q |
-
-Each video includes a full title, description, hashtags, and tags (Gaming category).
+| 4 | Insane Crash Compilation Continues \| Episode 4 | **2026-08-30 18:00** | https://www.youtube.com/watch?v=sTkFYzUGrrI |
+| 5 | More Road Chaos & Brutal Fails \| Episode 5 | **2026-09-05 18:00** | https://www.youtube.com/watch?v=D8wmiS1tGJk |
+| 6 | Final Chaos Drop — Best Crashes of the Series \| Episode 6 | **2026-09-11 18:00** | https://www.youtube.com/watch?v=fzjOC9WUk1Y |
 
 ## Thumbnails (manual step)
 
-API thumbnail upload returned 403 (needs custom-thumbnail channel permission / broader OAuth scope).
-Ready-made thumbnails are here — upload them in YouTube Studio:
+Upload these in YouTube Studio → each scheduled video → Details → Thumbnail:
 
-1. Open [YouTube Studio → Content → Scheduled](https://studio.youtube.com)
-2. Click each video → **Details** → **Thumbnail** → **Upload file**
-3. Use:
-   - Episode 1 → `output/thumbnails/ep1_thumb.jpg`
-   - Episode 2 → `output/thumbnails/ep2_thumb.jpg`
-   - Episode 3 → `output/thumbnails/ep3_thumb.jpg`
+- Ep1 → `output/thumbnails/ep1_thumb.jpg`
+- Ep2 → `output/thumbnails/ep2_thumb.jpg`
+- Ep3 → `output/thumbnails/ep3_thumb.jpg`
+- Ep4 → `output/thumbnails/ep4_thumb.jpg`
+- Ep5 → `output/thumbnails/ep5_thumb.jpg`
+- Ep6 → `output/thumbnails/ep6_thumb.jpg`
 
-## Files
-- Metadata: `weekly_metadata.json`
-- Results: `weekly_upload_results.json`
-- Uploader: `upload_weekly.py`
+## Metadata / results
+- `weekly_metadata.json` (Ep 1–3)
+- `weekly_metadata_ep456.json` (Ep 4–6)
+- `weekly_upload_results.json`
+- `weekly_upload_results_ep456.json`
