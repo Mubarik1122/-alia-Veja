@@ -1,0 +1,16 @@
+{
+  "name": "Žalia Veja static site",
+  "ports": [
+    {
+      "name": "web",
+      "port": 8080
+    }
+  ],
+  "terminals": [
+    {
+      "name": "web",
+      "command": "cd /workspace && python3 -m http.server 8080 --bind 0.0.0.0",
+      "description": "Serves the static site (index.html) at http://localhost:8080"
+    }
+  ]
+}
