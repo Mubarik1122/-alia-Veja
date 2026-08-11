@@ -1,1 +1,6 @@
 .youtube_tokens.json
+edit/
+output/merged_full_filtered.mp4
+output/part*.mp4
+output/parts_concat.txt
+__pycache__/
