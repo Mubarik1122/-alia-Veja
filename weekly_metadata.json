@@ -1,0 +1,35 @@
+{
+  "schedule_note": "3 weekly BeamNG chaos episodes from the edited Drive videos. Episode 1 tomorrow, then every 6 days.",
+  "videos": [
+    {
+      "order": 1,
+      "file": "output/part1.mp4",
+      "thumbnail": "output/thumbnails/ep1_thumb.jpg",
+      "title": "Giant Pothole Chaos! Cars Fall Into Massive Craters | Episode 1",
+      "description": "Episode 1 of the Chaos Compilation series!\n\nWatch cars take on insane giant potholes and collapsed roads — yellow hatchbacks, crash-test dummies, and full suspension destruction in this satisfying BeamNG-style chaos compilation.\n\nNew episode every week. Subscribe and turn on the bell so you don't miss Episode 2!\n\nWhich crash was the best? Comment below!\n\n#BeamNG #CarCrash #Pothole #Gaming #CarFails #CrashCompilation #Simulation #Satisfying #CarChaos #Episode1",
+      "hashtags": ["#BeamNG", "#CarCrash", "#Pothole", "#Gaming", "#CarFails", "#CrashCompilation", "#Simulation", "#Satisfying", "#CarChaos", "#Episode1"],
+      "tags": ["beamng", "beamng drive", "car crash compilation", "giant pothole", "car fails", "crash simulation", "satisfying crashes", "gaming compilation", "pothole challenge", "car destruction"],
+      "publish_at": "2026-08-12T18:00:00Z"
+    },
+    {
+      "order": 2,
+      "file": "output/part2.mp4",
+      "thumbnail": "output/thumbnails/ep2_thumb.jpg",
+      "title": "Audi RS6 vs The Impossible Crater Road | Episode 2",
+      "description": "Episode 2 is here!\n\nThe teal Audi RS6 Avant takes on deadly crater roads and desert collapse challenges. High-speed fails, hanging wheels, and pure physics chaos — don't look away!\n\nMissed Episode 1? Watch it on the channel. Episode 3 drops next week!\n\nRate this episode 1-10 in the comments.\n\n#BeamNG #Audi #RS6 #CarCrash #Gaming #CarFails #CrashCompilation #Simulation #Satisfying #Episode2",
+      "hashtags": ["#BeamNG", "#Audi", "#RS6", "#CarCrash", "#Gaming", "#CarFails", "#CrashCompilation", "#Simulation", "#Satisfying", "#Episode2"],
+      "tags": ["audi rs6", "beamng", "car crash", "crater road", "audi crash", "gaming compilation", "car fails", "crash simulation", "desert crash", "satisfying"],
+      "publish_at": "2026-08-18T18:00:00Z"
+    },
+    {
+      "order": 3,
+      "file": "output/part3.mp4",
+      "thumbnail": "output/thumbnails/ep3_thumb.jpg",
+      "title": "Highway Semi-Truck FIRE Crash Chaos | Episode 3",
+      "description": "Episode 3 — the biggest one yet!\n\nOverturned semi-trucks, highway fires, and absolute traffic chaos. Flames, smoke, and cars racing past the wreckage in this intense crash compilation.\n\nCatch up on Episodes 1 & 2 on the channel. More chaos coming every week!\n\nSubscribe if you love crash compilations!\n\n#BeamNG #TruckCrash #HighwayCrash #CarCrash #Gaming #CarFails #CrashCompilation #Simulation #Fire #Episode3",
+      "hashtags": ["#BeamNG", "#TruckCrash", "#HighwayCrash", "#CarCrash", "#Gaming", "#CarFails", "#CrashCompilation", "#Simulation", "#Fire", "#Episode3"],
+      "tags": ["truck crash", "highway crash", "beamng", "semi truck fire", "car crash compilation", "gaming", "crash simulation", "truck accident", "satisfying crashes", "car fails"],
+      "publish_at": "2026-08-24T18:00:00Z"
+    }
+  ]
+}
