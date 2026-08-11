@@ -1,0 +1,35 @@
+{
+  "schedule_note": "Episodes 4-6 continue the weekly series (every 6 days after Episode 3).",
+  "videos": [
+    {
+      "order": 4,
+      "file": "output/part4.mp4",
+      "thumbnail": "output/thumbnails/ep4_thumb.jpg",
+      "title": "Insane Crash Compilation Continues | Episode 4",
+      "description": "Episode 4 of the Chaos Compilation series!\n\nMore wild crashes, failed stunts, and physics chaos from the edited compilation. Cars vs impossible roads — it only gets crazier from here.\n\nCatch Episodes 1–3 on the channel. Episode 5 drops in 6 days!\n\nWhich moment hit hardest? Comment below!\n\n#BeamNG #CarCrash #Gaming #CarFails #CrashCompilation #Simulation #Satisfying #CarChaos #Episode4 #GamingCompilation",
+      "hashtags": ["#BeamNG", "#CarCrash", "#Gaming", "#CarFails", "#CrashCompilation", "#Simulation", "#Satisfying", "#CarChaos", "#Episode4", "#GamingCompilation"],
+      "tags": ["beamng", "car crash compilation", "car fails", "crash simulation", "gaming compilation", "satisfying crashes", "car destruction", "beamng drive", "episode 4", "chaos compilation"],
+      "publish_at": "2026-08-30T18:00:00Z"
+    },
+    {
+      "order": 5,
+      "file": "output/part5.mp4",
+      "thumbnail": "output/thumbnails/ep5_thumb.jpg",
+      "title": "More Road Chaos & Brutal Fails | Episode 5",
+      "description": "Episode 5 is live on the schedule!\n\nBrutal road fails, high-speed destruction, and nonstop chaos. If you loved Episodes 1–4, this one's packed with even more satisfying crashes.\n\nEpisode 6 (the finale of this pack) drops next week!\n\nSubscribe and hit the bell for every weekly drop.\n\n#BeamNG #CarCrash #Gaming #CarFails #CrashCompilation #Simulation #Satisfying #CarChaos #Episode5 #RoadChaos",
+      "hashtags": ["#BeamNG", "#CarCrash", "#Gaming", "#CarFails", "#CrashCompilation", "#Simulation", "#Satisfying", "#CarChaos", "#Episode5", "#RoadChaos"],
+      "tags": ["beamng", "road chaos", "car crash", "car fails", "crash compilation", "gaming", "satisfying", "beamng drive", "episode 5", "car destruction"],
+      "publish_at": "2026-09-05T18:00:00Z"
+    },
+    {
+      "order": 6,
+      "file": "output/part6.mp4",
+      "thumbnail": "output/thumbnails/ep6_thumb.jpg",
+      "title": "Final Chaos Drop — Best Crashes of the Series | Episode 6",
+      "description": "Episode 6 — the final chapter of this chaos pack!\n\nThe biggest fails and most satisfying crashes from the full edited compilation. Thanks for watching the series — more drops coming soon!\n\nRewatch Episodes 1–5 on the channel and tell us your favorite episode in the comments.\n\n#BeamNG #CarCrash #Gaming #CarFails #CrashCompilation #Simulation #Satisfying #CarChaos #Episode6 #Finale",
+      "hashtags": ["#BeamNG", "#CarCrash", "#Gaming", "#CarFails", "#CrashCompilation", "#Simulation", "#Satisfying", "#CarChaos", "#Episode6", "#Finale"],
+      "tags": ["beamng", "finale", "car crash compilation", "best crashes", "car fails", "gaming compilation", "satisfying crashes", "beamng drive", "episode 6", "chaos compilation"],
+      "publish_at": "2026-09-11T18:00:00Z"
+    }
+  ]
+}
