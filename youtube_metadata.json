@@ -1,0 +1,117 @@
+{
+  "channel_defaults": {
+    "category_id": "2",
+    "default_language": "en",
+    "license": "youtube",
+    "privacy_status_first_video": "public",
+    "privacy_status_scheduled_videos": "private",
+    "publish_time_local": "18:00",
+    "publish_timezone": "UTC",
+    "made_for_kids": false,
+    "common_hashtags": ["#Shorts", "#ASMR", "#CarCustomization", "#CarAssembly", "#MiniatureCars", "#Satisfying", "#CarMods", "#Diecast", "#CarLovers", "#AutoDetailing"],
+    "common_tags": ["car assembly", "car customization", "asmr car", "miniature car build", "satisfying car video", "car modification", "youtube shorts", "viral car build", "car detailing", "custom car build", "diecast customization", "performance upgrades", "car restoration asmr", "automotive asmr", "dream car build"]
+  },
+  "schedule_note": "Video 1 publishes immediately on upload day (2026-08-11). Videos 2-10 are scheduled one per day, 2026-08-12 through 2026-08-20, at 18:00 UTC.",
+  "videos": [
+    {
+      "order": 1,
+      "file": "output/01_BMW_M4_youtube_short.mp4",
+      "title": "BMW M4 Pearl White Gets a Full Custom Makeover | ASMR Car Build #Shorts",
+      "description": "Watch a miniature BMW M4 in Pearl White get fully transformed with premium performance upgrades — chrome emblem, carbon-fibre hood vents, side skirts, matte-black wheels with blue LED lugs, color-matched calipers, titanium quad exhaust, GT wing, LED light startup, and a full interior touch-up. Every click and snap in satisfying macro ASMR detail.\n\nWhich upgrade was your favorite? Comment below!\n\nSubscribe for a new custom car build every day.\n\n#Shorts #ASMR #CarCustomization #BMW #M4 #CarAssembly #MiniatureCars #Satisfying #CarMods #Diecast",
+      "hashtags": ["#Shorts", "#ASMR", "#CarCustomization", "#BMW", "#M4", "#CarAssembly", "#MiniatureCars", "#Satisfying", "#CarMods", "#Diecast"],
+      "tags": ["bmw m4", "bmw m4 customization", "pearl white bmw", "bmw m4 modified", "bmw build asmr"],
+      "publish_at": "2026-08-11T00:00:00Z",
+      "publish_mode": "immediate"
+    },
+    {
+      "order": 2,
+      "file": "output/02_Porsche_911_GT3_youtube_short.mp4",
+      "title": "Porsche 911 GT3 Jet Black Full Custom Build | ASMR Car Assembly #Shorts",
+      "description": "A miniature Porsche 911 GT3 in Jet Black gets the full performance treatment — carbon hood vents, chrome details, matte-black wheels with glowing blue lug LEDs, matching calipers, blue-tipped titanium quad exhaust, GT racing wing, LED startup sequence, and leather interior work. Pure macro ASMR satisfaction.\n\nRate this build from 1-10 in the comments!\n\nSubscribe for a new custom car build every day.\n\n#Shorts #ASMR #Porsche #911GT3 #CarCustomization #CarAssembly #MiniatureCars #Satisfying #CarMods #Diecast",
+      "hashtags": ["#Shorts", "#ASMR", "#Porsche", "#911GT3", "#CarCustomization", "#CarAssembly", "#MiniatureCars", "#Satisfying", "#CarMods", "#Diecast"],
+      "tags": ["porsche 911 gt3", "porsche customization", "jet black porsche", "porsche build asmr", "911 gt3 modified"],
+      "publish_at": "2026-08-12T18:00:00Z",
+      "publish_mode": "scheduled"
+    },
+    {
+      "order": 3,
+      "file": "output/03_Lamborghini_Huracán_youtube_short.mp4",
+      "title": "Lamborghini Huracán Racing Red Custom Transformation | ASMR Build #Shorts",
+      "description": "This miniature Lamborghini Huracán in Racing Red goes from stock to stunning — carbon-fibre aero, chrome emblem snap, matte-black wheels with blue LED lugs, red calipers, titanium quad exhaust with blue tips, GT wing, full LED light startup, and a fresh leather interior. Ultra-satisfying macro ASMR.\n\nWould you drive this spec? Tell us below!\n\nSubscribe for a new custom car build every day.\n\n#Shorts #ASMR #Lamborghini #Huracan #CarCustomization #CarAssembly #MiniatureCars #Satisfying #CarMods #Supercars",
+      "hashtags": ["#Shorts", "#ASMR", "#Lamborghini", "#Huracan", "#CarCustomization", "#CarAssembly", "#MiniatureCars", "#Satisfying", "#CarMods", "#Supercars"],
+      "tags": ["lamborghini huracan", "lamborghini customization", "racing red lamborghini", "huracan build asmr", "lamborghini modified"],
+      "publish_at": "2026-08-13T18:00:00Z",
+      "publish_mode": "scheduled"
+    },
+    {
+      "order": 4,
+      "file": "output/04_Ferrari_488_Pista_youtube_short.mp4",
+      "title": "Ferrari 488 Pista Electric Blue Full Custom Build | ASMR Car Assembly #Shorts",
+      "description": "A miniature Ferrari 488 Pista in Electric Blue gets premium upgrades one satisfying click at a time — carbon hood scoops, side skirts, matte-black wheels with blue LED accents, color-matched calipers, titanium quad exhaust, GT wing, LED startup animation, and tailored interior. Macro ASMR at its finest.\n\nWhat color Ferrari should we build next?\n\nSubscribe for a new custom car build every day.\n\n#Shorts #ASMR #Ferrari #488Pista #CarCustomization #CarAssembly #MiniatureCars #Satisfying #CarMods #Supercars",
+      "hashtags": ["#Shorts", "#ASMR", "#Ferrari", "#488Pista", "#CarCustomization", "#CarAssembly", "#MiniatureCars", "#Satisfying", "#CarMods", "#Supercars"],
+      "tags": ["ferrari 488 pista", "ferrari customization", "electric blue ferrari", "ferrari build asmr", "488 pista modified"],
+      "publish_at": "2026-08-14T18:00:00Z",
+      "publish_mode": "scheduled"
+    },
+    {
+      "order": 5,
+      "file": "output/05_McLaren_720S_youtube_short.mp4",
+      "title": "McLaren 720S Matte Grey Custom Makeover | ASMR Car Build #Shorts",
+      "description": "Watch this miniature McLaren 720S in Matte Grey transform with carbon-fibre upgrades, matte-black wheels with glowing blue lug nuts, grey calipers, blue-tipped titanium exhaust, GT racing wing, LED light sequence, and leather interior touch-up. Every snap and press in crisp macro ASMR.\n\nBest McLaren spec — yes or no?\n\nSubscribe for a new custom car build every day.\n\n#Shorts #ASMR #McLaren #720S #CarCustomization #CarAssembly #MiniatureCars #Satisfying #CarMods #Supercars",
+      "hashtags": ["#Shorts", "#ASMR", "#McLaren", "#720S", "#CarCustomization", "#CarAssembly", "#MiniatureCars", "#Satisfying", "#CarMods", "#Supercars"],
+      "tags": ["mclaren 720s", "mclaren customization", "matte grey mclaren", "mclaren build asmr", "720s modified"],
+      "publish_at": "2026-08-15T18:00:00Z",
+      "publish_mode": "scheduled"
+    },
+    {
+      "order": 6,
+      "file": "output/06_Audi_R8_youtube_short.mp4",
+      "title": "Audi R8 Metallic Silver Full Custom Build | ASMR Car Assembly #Shorts",
+      "description": "A miniature Audi R8 in Metallic Silver gets the complete performance package — chrome grille emblem, carbon hood vents, side skirts, matte-black wheels with blue LED lugs, silver calipers, titanium quad exhaust, GT wing, LED startup, and a fresh interior. Satisfying macro ASMR from start to finish.\n\nWhich car should get the next build?\n\nSubscribe for a new custom car build every day.\n\n#Shorts #ASMR #Audi #R8 #CarCustomization #CarAssembly #MiniatureCars #Satisfying #CarMods #Diecast",
+      "hashtags": ["#Shorts", "#ASMR", "#Audi", "#R8", "#CarCustomization", "#CarAssembly", "#MiniatureCars", "#Satisfying", "#CarMods", "#Diecast"],
+      "tags": ["audi r8", "audi r8 customization", "metallic silver audi", "audi build asmr", "r8 modified"],
+      "publish_at": "2026-08-16T18:00:00Z",
+      "publish_mode": "scheduled"
+    },
+    {
+      "order": 7,
+      "file": "output/07_Mercedes_AMG_GT_youtube_short.mp4",
+      "title": "Mercedes-AMG GT Deep Emerald Green Custom Build | ASMR Assembly #Shorts",
+      "description": "This miniature Mercedes-AMG GT in Deep Emerald Green goes full custom — carbon aero, chrome details, matte-black wheels with blue LED accents, green calipers, blue-tipped titanium quad exhaust, GT wing, LED light startup, and leather interior work. Pure satisfying ASMR.\n\nEmerald Green might be the best spec yet — agree?\n\nSubscribe for a new custom car build every day.\n\n#Shorts #ASMR #MercedesAMG #AMGGT #CarCustomization #CarAssembly #MiniatureCars #Satisfying #CarMods #Mercedes",
+      "hashtags": ["#Shorts", "#ASMR", "#MercedesAMG", "#AMGGT", "#CarCustomization", "#CarAssembly", "#MiniatureCars", "#Satisfying", "#CarMods", "#Mercedes"],
+      "tags": ["mercedes amg gt", "amg gt customization", "emerald green mercedes", "amg build asmr", "amg gt modified"],
+      "publish_at": "2026-08-17T18:00:00Z",
+      "publish_mode": "scheduled"
+    },
+    {
+      "order": 8,
+      "file": "output/08_Nissan_GT_R_youtube_short.mp4",
+      "title": "Nissan GT-R Sunset Orange Full Custom Transformation | ASMR Build #Shorts",
+      "description": "Godzilla gets a makeover! This miniature Nissan GT-R in Sunset Orange receives carbon-fibre upgrades, matte-black wheels with blue LED lugs, orange calipers, titanium quad exhaust with blue tips, GT wing, LED startup animation, and interior touch-up. Macro ASMR perfection.\n\nGT-R fans, rate this build below!\n\nSubscribe for a new custom car build every day.\n\n#Shorts #ASMR #NissanGTR #GTR #CarCustomization #CarAssembly #MiniatureCars #Satisfying #CarMods #JDM",
+      "hashtags": ["#Shorts", "#ASMR", "#NissanGTR", "#GTR", "#CarCustomization", "#CarAssembly", "#MiniatureCars", "#Satisfying", "#CarMods", "#JDM"],
+      "tags": ["nissan gtr", "gtr customization", "sunset orange gtr", "gtr build asmr", "gtr modified", "jdm build"],
+      "publish_at": "2026-08-18T18:00:00Z",
+      "publish_mode": "scheduled"
+    },
+    {
+      "order": 9,
+      "file": "output/09_Chevrolet_Corvette_C8_youtube_short.mp4",
+      "title": "Corvette C8 Titanium Gold Custom Build | ASMR Car Assembly #Shorts",
+      "description": "A miniature Chevrolet Corvette C8 in Titanium Gold gets the luxury performance treatment — carbon hood scoops, side skirts, matte-black wheels with blue LED accents, gold calipers, blue-tipped titanium quad exhaust, GT racing wing, LED light startup, and a fresh leather interior. Satisfying macro ASMR.\n\nGold Corvette — too much or just right?\n\nSubscribe for a new custom car build every day.\n\n#Shorts #ASMR #Corvette #C8 #CarCustomization #CarAssembly #MiniatureCars #Satisfying #CarMods #AmericanMuscle",
+      "hashtags": ["#Shorts", "#ASMR", "#Corvette", "#C8", "#CarCustomization", "#CarAssembly", "#MiniatureCars", "#Satisfying", "#CarMods", "#AmericanMuscle"],
+      "tags": ["corvette c8", "corvette customization", "titanium gold corvette", "corvette build asmr", "c8 modified"],
+      "publish_at": "2026-08-19T18:00:00Z",
+      "publish_mode": "scheduled"
+    },
+    {
+      "order": 10,
+      "file": "output/10_Ford_Mustang_Shelby_GT500_youtube_short.mp4",
+      "title": "Mustang Shelby GT500 Midnight Purple Custom Build | ASMR Assembly #Shorts",
+      "description": "The finale build! A miniature Ford Mustang Shelby GT500 in Midnight Purple transforms with carbon-fibre aero, matte-black wheels with blue LED lugs, purple calipers, titanium quad exhaust, GT wing, full LED startup sequence, and leather interior work. The most satisfying macro ASMR build yet.\n\nWhich of the 10 builds was your favorite?\n\nSubscribe for more custom car builds!\n\n#Shorts #ASMR #Mustang #ShelbyGT500 #CarCustomization #CarAssembly #MiniatureCars #Satisfying #CarMods #MuscleCar",
+      "hashtags": ["#Shorts", "#ASMR", "#Mustang", "#ShelbyGT500", "#CarCustomization", "#CarAssembly", "#MiniatureCars", "#Satisfying", "#CarMods", "#MuscleCar"],
+      "tags": ["shelby gt500", "mustang customization", "midnight purple mustang", "mustang build asmr", "gt500 modified", "muscle car build"],
+      "publish_at": "2026-08-20T18:00:00Z",
+      "publish_mode": "scheduled"
+    }
+  ]
+}
